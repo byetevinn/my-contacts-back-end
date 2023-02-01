@@ -1,0 +1,26 @@
+{
+  "name": "my-contacts-back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:byetevinn/my-contacts-back-end.git",
+  "author": "byetevinn <stevan14padilha@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "pf": "^0.0.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.11",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/reflect-metadata": "^0.1.0",
+    "nodemon": "^2.0.20",
+    "sucrase": "^3.29.0"
+  }
+}
