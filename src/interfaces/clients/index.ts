@@ -4,3 +4,8 @@ export interface IClientRequest {
   fullName: string;
   phone: string;
 }
+
+export interface IClientLogin {
+  email: string;
+  password: string;
+}
