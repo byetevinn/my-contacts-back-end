@@ -1,7 +1,7 @@
-import clientCreateService from "../../services/clients/createClient.service";
-
 import { Request, Response } from "express";
 import { instanceToPlain } from "class-transformer";
+
+import clientCreateService from "../../services/clients/createClient.service";
 
 const clientCreateController = async (req: Request, res: Response) => {
   const { email, password, fullName, phone } = req.body;
