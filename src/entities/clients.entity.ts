@@ -27,7 +27,7 @@ export class Client {
   @Column()
   phone: string;
 
-  @Column()
+  @Column({ default: true })
   isActive: boolean;
 
   @CreateDateColumn()

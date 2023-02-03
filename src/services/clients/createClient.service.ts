@@ -14,7 +14,7 @@ const clientCreateService = async ({
 
   const emailAlreadyExists = clients.find((client) => client.email === email);
 
-  if (!emailAlreadyExists) {
+  if (emailAlreadyExists) {
     throw new AppError("Email already exists");
   }
 
