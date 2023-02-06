@@ -9,7 +9,7 @@ const clientLoginService = async ({ email, password }: IClientLogin) => {
 
   const account = users.find((user) => user.email === email);
 
-  if (!account) {
+  if (!account || !account.isActive) {
     throw new AppError("Account not found");
   }
 

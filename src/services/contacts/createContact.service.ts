@@ -6,6 +6,7 @@ const contactCreateService = async ({
   email,
   fullName,
   phone,
+  id,
 }: IContactRequest) => {
   const contacts = await contactRepository.find();
 
@@ -13,7 +14,7 @@ const contactCreateService = async ({
     (contact) => contact.email === email
   );
 
-  if (!emailAlreadyExists) {
+  if (emailAlreadyExists) {
     throw new AppError("Email already exists");
   }
 
@@ -21,6 +22,7 @@ const contactCreateService = async ({
     email,
     fullName,
     phone,
+    client: { id },
   });
 
   await contactRepository.save(contact);
