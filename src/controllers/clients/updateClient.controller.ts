@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { instanceToPlain } from "class-transformer";
+
 import updateClientService from "../../services/clients/updateClient.service";
 
 const updateClientController = async (req: Request, res: Response) => {

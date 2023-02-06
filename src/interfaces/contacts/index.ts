@@ -4,3 +4,7 @@ export interface IContactRequest {
   phone: string;
   id: string;
 }
+
+export interface IContactUpdate extends IContactRequest {
+  id: string;
+}

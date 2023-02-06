@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 import contactCreateService from "../../services/contacts/createContact.service";
 
-const contactCreateController = async (req: Request, res: Response) => {
+const createContactController = async (req: Request, res: Response) => {
   const { email, fullName, phone } = req.body;
   const { id } = req.client;
 
@@ -16,4 +16,4 @@ const contactCreateController = async (req: Request, res: Response) => {
   return res.status(201).json(newContact);
 };
 
-export default contactCreateController;
+export default createContactController;
