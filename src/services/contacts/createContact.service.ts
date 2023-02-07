@@ -8,16 +8,6 @@ const contactCreateService = async ({
   phone,
   id,
 }: IContactRequest) => {
-  const contacts = await contactRepository.find();
-
-  const emailAlreadyExists = contacts.find(
-    (contact) => contact.email === email
-  );
-
-  if (emailAlreadyExists) {
-    throw new AppError("Email already exists");
-  }
-
   const contact = contactRepository.create({
     email,
     fullName,
