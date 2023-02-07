@@ -1,8 +1,9 @@
+import bcrypt from "bcrypt";
+
 import { clientRepository } from "../../utilities/repositories";
 import { IClientRequest } from "../../interfaces/clients";
 import { AppError } from "../../errors/AppError";
-
-import bcrypt from "bcrypt";
+import { validateCreateClient } from "../../validators/validations";
 
 const clientCreateService = async ({
   email,
@@ -17,6 +18,8 @@ const clientCreateService = async ({
   if (emailAlreadyExists) {
     throw new AppError("Email already exists");
   }
+
+  await validateCreateClient({ email, password, fullName, phone });
 
   const client = clientRepository.create({
     email,
