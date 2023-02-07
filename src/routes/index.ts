@@ -5,8 +5,8 @@ import contactsRoutes from "./contacts.routes";
 import loginRoutes from "./login.routes";
 
 const appRoutes = (app: Express) => {
-  app.use("/client", clientRoutes());
-  app.use("/contact", contactsRoutes());
+  app.use("/clients", clientRoutes());
+  app.use("/contacts", contactsRoutes());
   app.use("/login", loginRoutes());
 };
 
