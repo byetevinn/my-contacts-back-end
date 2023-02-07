@@ -1,5 +1,6 @@
 import { IContactUpdate } from "../../interfaces/contacts";
 import { contactRepository } from "../../utilities/repositories";
+import { validateUpdateContact } from "../../validators/contactsValidations";
 
 const updateContactService = async ({
   id,
@@ -9,7 +10,7 @@ const updateContactService = async ({
 }: IContactUpdate) => {
   const contact = await contactRepository.findOneBy({ id });
 
-  console.log(contact);
+  await validateUpdateContact({ id, email, fullName, phone });
 
   await contactRepository.update(id, {
     email: email ? email : contact!.email,

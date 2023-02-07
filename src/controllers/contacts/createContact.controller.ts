@@ -6,12 +6,14 @@ const createContactController = async (req: Request, res: Response) => {
   const { email, fullName, phone } = req.body;
   const { id } = req.client;
 
-  const newContact = await contactCreateService({
-    email,
-    fullName,
-    phone,
-    id,
-  });
+  const newContact = await contactCreateService(
+    {
+      email,
+      fullName,
+      phone,
+    },
+    id
+  );
 
   return res.status(201).json(newContact);
 };
