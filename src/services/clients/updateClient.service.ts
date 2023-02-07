@@ -3,7 +3,7 @@ import { hashSync } from "bcrypt";
 import { AppError } from "../../errors/AppError";
 import { IClientUpdate } from "../../interfaces/clients";
 import { clientRepository } from "../../utilities/repositories";
-import { validateUpdateClient } from "../../validators/validations";
+import { validateUpdateClient } from "../../validators/clientsValidations";
 
 const updateClientService = async ({
   email,

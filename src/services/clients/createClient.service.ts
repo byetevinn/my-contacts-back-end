@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import { clientRepository } from "../../utilities/repositories";
 import { IClientRequest } from "../../interfaces/clients";
 import { AppError } from "../../errors/AppError";
-import { validateCreateClient } from "../../validators/validations";
+import { validateCreateClient } from "../../validators/clientsValidations";
 
 const clientCreateService = async ({
   email,
