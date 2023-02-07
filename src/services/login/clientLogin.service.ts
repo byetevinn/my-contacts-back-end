@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+
 import { AppError } from "../../errors/AppError";
 import { IClientLogin } from "../../interfaces/clients";
 import { clientRepository } from "../../utilities/repositories";
@@ -10,7 +11,7 @@ const clientLoginService = async ({ email, password }: IClientLogin) => {
   const account = users.find((user) => user.email === email);
 
   if (!account || !account.isActive) {
-    throw new AppError("Account not found");
+    throw new AppError("Wrong email/password", 403);
   }
 
   if (!bcrypt.compareSync(password, account.password)) {
