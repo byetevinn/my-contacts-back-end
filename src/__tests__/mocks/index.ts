@@ -1,4 +1,5 @@
 import { IClientLogin, IClientRequest } from "../../interfaces/clients";
+import { IContactRequest } from "../../interfaces/contacts";
 
 export const mockedClient: IClientRequest = {
   email: "andrade@gmail.com",
@@ -17,4 +18,22 @@ export const mockedOtherClient: IClientRequest = {
   password: "Eric12!@",
   fullName: "Eric Padilha",
   phone: "41998865423",
+};
+
+export const mockedContact: IContactRequest = {
+  email: "victor@gmail.com",
+  fullName: "Victor Oliveira",
+  phone: "41998744432",
+};
+
+export const mockedWrongContact: IContactRequest = {
+  email: "victor@gmail.com",
+  fullName: "Victor Oliveira",
+  phone: "",
+};
+
+export const mockedOtherContact: IContactRequest = {
+  email: "victorino@gmail.com",
+  fullName: "Victor Zita",
+  phone: "41998744432",
 };

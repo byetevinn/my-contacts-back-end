@@ -69,7 +69,7 @@ describe("/clients", () => {
       .get("/clients")
       .set("Authorization", `Bearer ${loginResponse.body.token}`);
 
-    expect(Array.isArray(response.body.contacts));
+    expect(Array.isArray(response.body.contacts)).toBeTruthy();
     expect(response.body.contacts).toHaveLength(0);
     expect(response.body).not.toHaveProperty("password");
     expect(response.status).toBe(200);
