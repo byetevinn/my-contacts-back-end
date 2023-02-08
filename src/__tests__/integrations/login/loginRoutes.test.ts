@@ -3,7 +3,11 @@ import { DataSource } from "typeorm";
 
 import app from "../../../app";
 import AppDataSource from "../../../data-source";
-import { mockedClientLogin, mockedOtherClient } from "../../mocks";
+import {
+  mockedClient,
+  mockedClientLogin,
+  mockedOtherClient,
+} from "../../mocks";
 
 describe("/login", () => {
   let connection: DataSource;
@@ -36,5 +40,14 @@ describe("/login", () => {
 
     expect(response.body).toHaveProperty("message");
     expect(response.status).toBe(403);
+  });
+
+  test("POST /login -  Must be able to login", async () => {
+    await request(app).post("/clients").send(mockedClient);
+
+    const response = await request(app).post("/login").send(mockedClientLogin);
+
+    expect(response.body).toHaveProperty("token");
+    expect(response.status).toBe(200);
   });
 });

@@ -69,7 +69,7 @@ describe("/clients", () => {
       .get("/clients")
       .set("Authorization", `Bearer ${loginResponse.body.token}`);
 
-    expect(Array.isArray(response.body.contacts));
+    expect(Array.isArray(response.body.contacts)).toBeTruthy();
     expect(response.body.contacts).toHaveLength(0);
     expect(response.body).not.toHaveProperty("password");
     expect(response.status).toBe(200);
@@ -121,6 +121,13 @@ describe("/clients", () => {
     expect(response.body.fullName).toEqual("Andrade Souza");
     expect(response.body).not.toHaveProperty("password");
     expect(response.status).toBe(200);
+  });
+
+  test("DELETE /clients -  Must not be able to delete client without authentication", async () => {
+    const response = await request(app).delete(`/clients`).send();
+
+    expect(response.body).toHaveProperty("message");
+    expect(response.status).toBe(401);
   });
 
   test("DELETE /clients -  Must be able to soft delete client", async () => {
