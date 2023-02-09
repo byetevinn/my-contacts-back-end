@@ -242,7 +242,7 @@ Não requer corpo para fazer a requisição
 ```JSON
 {
 	"id": "d5003114-6145-459d-953c-bf5045e4e86b",
-  "email": "ericzão@gmail.com",
+  	"email": "ericzão@gmail.com",
 	"fullName": "Eric Silva"
 }
 ```
