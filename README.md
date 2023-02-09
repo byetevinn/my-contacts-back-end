@@ -17,6 +17,8 @@ Projeto desenvolvido com a finalidade de armazenar contatos.
 
 6- Para rodar o projeto utilize o comando `yarn dev`
 
+OBS: Caso ocorra o seguinte erro `Error: listen EADDRINUSE: address already in use :::3000` ao rodar o projeto, mude o endereço da porta do servidor `(SERVER_PORT)` no arquivo `.env` para outro valor
+
 
 # Tecnologias usadas no projeto
 
