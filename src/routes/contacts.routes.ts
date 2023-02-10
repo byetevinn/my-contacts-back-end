@@ -13,7 +13,7 @@ const contactsRoutes = () => {
   routes.post("", ensureAuth, createContactController);
   routes.get("", ensureAuth, listContactsController);
   routes.patch("", ensureAuth, updateContactController);
-  routes.delete("", ensureAuth, deleteContactController);
+  routes.delete("/:id", ensureAuth, deleteContactController);
 
   return routes;
 };
