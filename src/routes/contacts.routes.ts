@@ -12,7 +12,7 @@ const routes = Router();
 const contactsRoutes = () => {
   routes.post("", ensureAuth, createContactController);
   routes.get("", ensureAuth, listContactsController);
-  routes.patch("", ensureAuth, updateContactController);
+  routes.patch("/:id", ensureAuth, updateContactController);
   routes.delete("/:id", ensureAuth, deleteContactController);
 
   return routes;
