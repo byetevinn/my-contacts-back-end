@@ -239,17 +239,16 @@ Não requer corpo para fazer a requisição
 
 #
 
-`PATCH /contacts -  REQUISIÇÃO`
+`PATCH /contacts/:id -  REQUISIÇÃO`
 
 ```JSON
 {
-	"id": "d5003114-6145-459d-953c-bf5045e4e86b",
   	"email": "ericzão@gmail.com",
 	"fullName": "Eric Silva"
 }
 ```
 
-`PATCH /contacts -  RESPOSTA - STATUS 200`
+`PATCH /contacts/:id -  RESPOSTA - STATUS 200`
 
 ```JSON
 {
@@ -264,15 +263,13 @@ Não requer corpo para fazer a requisição
 
 #
 
-`DELETE /contacts -  REQUISIÇÃO`
+`DELETE /contacts/:id -  REQUISIÇÃO`
 
-```JSON
-{
-	"id": "d5003114-6145-459d-953c-bf5045e4e86b"
-}
+```
+Não requer corpo para fazer a requisição
 ```
 
-`DELETE /contacts -  RESPOSTA - STATUS 204`
+`DELETE /contacts/:id -  RESPOSTA - STATUS 204`
 
 ```
 Não contém corpo de resposta
